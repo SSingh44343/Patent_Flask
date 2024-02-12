@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if patents %}
+        <ul>
+        {% for patent in patents %}
+            <li>
+                <p>{{ patent.index }}. <a href="{{ patent.url }}" target="_blank">{{ patent.title }}</a> ({{ patent.number }})</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>
